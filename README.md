@@ -1,6 +1,6 @@
 # Prerequisite
 
-# Docker installation \
+# Docker installation
 ```
 sudo apt update
 sudo apt install -y docker.io
@@ -23,10 +23,15 @@ curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dear
 sudo apt update
 sudo apt install -y nvidia-container-toolkit
 ```
-
+# Pull docker
+```
+docker pull rlaglo/autoware:ddr
+nano run_autoware.sh
+```
+you can use other name for .sh file
 
 you shoud first install docker. it is recommended to register at docker.io\
-run_autoware.sh is shell script activating docker you pulled from docker pull rlaglo/autoware:ddr\
+run_autoware.sh is shell script activating docker you pulled\
 Before you source run_autoware.sh file, you shoud modify some codes according to your personal settings\
 content of run_autoware.sh is as below
 ```
