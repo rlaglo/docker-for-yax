@@ -1,4 +1,4 @@
-## Prerequisite
+# Prerequisite
 Linux ubuntu >= 22.04\
 SSD >= 150GB
 ### Docker installation
@@ -6,13 +6,13 @@ SSD >= 150GB
 sudo apt update
 sudo apt install -y docker.io
 ```
-# Add current user to docker group (to use docker w/o sudo)
+### Add current user to docker group (to use docker w/o sudo)
 ```
 sudo usermod -aG docker $USER
 log out or reboot to apply effect (later)
 ```
 
-# NVIDIA Container Toolkit
+### NVIDIA Container Toolkit
 You should install NVIDIA Toolkit in order to use "--gpus all" option in .sh file
 ```
 curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
@@ -25,7 +25,7 @@ curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dear
 sudo apt install -y nvidia-container-toolkit
 sudo systemctl restart docker
 ```
-# Pull docker
+### Pull docker
 ```
 docker pull rlaglo/autoware:ddr
 nano run_autoware.sh
@@ -59,7 +59,7 @@ docker run -it --rm \
 ```
 
 
-# Options
+### Options
 "-v" options defines volume mount: check your volume mount path, and assign it with docker container's path \
 [a]:[b] means a directory [b] in container's space will share same space with host's space [a] \
 ex) /my_dir/my_ws:/home/autoware/shared_dir means you can see what you installed in container from host's /my_dir/my_ws folder\
@@ -81,7 +81,7 @@ docker run -it --rm \
   autoware:ddr \
 ```
 
-# Run docker container
+### Run docker container
 at terminal, type
 ```
 . /<path_to_run_autoware.sh>
