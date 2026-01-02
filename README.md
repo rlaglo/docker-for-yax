@@ -1,5 +1,5 @@
 ## Prerequisite
-Linux ubuntu >= 22.04
+Linux ubuntu >= 22.04\
 SSD >= 150GB
 ### Docker installation
 ```
