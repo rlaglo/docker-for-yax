@@ -13,6 +13,7 @@ log out or reboot to apply effect (later)
 ```
 
 # NVIDIA Container Toolkit
+You should install NVIDIA Toolkit in order to use "--gpus all" option in .sh file
 ```
 curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
   && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
@@ -21,7 +22,6 @@ curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dear
 ```
 (check your ros distro if error occurs)
 ```
-sudo apt update
 sudo apt install -y nvidia-container-toolkit
 sudo systemctl restart docker
 ```
