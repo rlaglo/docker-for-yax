@@ -33,8 +33,7 @@ docker run -it --rm \
 [a]:[b] means a directory [b] in container's space will share same space with host's space [a] \
 ex) /my_dir/my_ws:/home/autoware/shared_dir means you can see what you installed in container from host's /my_dir/my_ws folder
 
-deactivating options #17 ~ #21 is recommended
-
+deactivating options #17 ~ #21 is recommended \
 EX)
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\
 #!/bin/bash
@@ -55,8 +54,8 @@ docker run -it --rm \
 # Run 
 at terminal, type
 
-. /<path_to_run_autoware.sh>
-or
-source /<path_to_run_autoware.sh>
+. /<path_to_run_autoware.sh> \
+or \
+source /<path_to_run_autoware.sh> 
 
 
