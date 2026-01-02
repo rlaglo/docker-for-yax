@@ -53,7 +53,7 @@ docker run -it --rm \
 
 
 # Options
--v options defines volume mount: check your volume mount path, and assign it with docker container's path \
+"-v" options defines volume mount: check your volume mount path, and assign it with docker container's path \
 [a]:[b] means a directory [b] in container's space will share same space with host's space [a] \
 ex) /my_dir/my_ws:/home/autoware/shared_dir means you can see what you installed in container from host's /my_dir/my_ws folder\
 deactivating options #17 ~ #21 is recommended \
