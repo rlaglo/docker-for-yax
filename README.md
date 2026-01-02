@@ -24,7 +24,7 @@ docker run -it --rm \
   -v /media/qwer123/bigg1/ubuntufile:/home/autoware/shared_dir2 \
   -v /home/qwer123/cyclonedds.xml:/home/autoware/cyclonedds.xml:ro \
   --name autoware \
-  autoware:ddr
+  autoware:ddr \
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
 
@@ -48,8 +48,8 @@ docker run -it --rm \
   -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -v /my_host's somewhere:/home/autoware/shared_dir \
-  --name my_autoware \
-  my_autoware:ddr
+  --name autoware \
+  autoware:ddr \
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
 # Run 
