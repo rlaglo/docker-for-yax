@@ -1,6 +1,7 @@
-# Prerequisite
-
-# Docker installation
+## Prerequisite
+Linux ubuntu >= 22.04
+SSD >= 150GB
+### Docker installation
 ```
 sudo apt update
 sudo apt install -y docker.io
@@ -22,6 +23,7 @@ curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dear
 ```
 sudo apt update
 sudo apt install -y nvidia-container-toolkit
+sudo systemctl restart docker
 ```
 # Pull docker
 ```
