@@ -81,7 +81,7 @@ docker run -it --rm \
   autoware:ddr \
 ```
 
-# Run 
+# Run docker container
 at terminal, type
 ```
 . /<path_to_run_autoware.sh>
@@ -90,4 +90,4 @@ or
 ```
 source /<path_to_run_autoware.sh> 
 ```
-
+# 
