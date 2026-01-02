@@ -1,11 +1,35 @@
 # Prerequisite
-run_autoware.sh is shell script activating docker you pulled from docker pull rlaglo/autoware:ddr
 
-Before you source run_autoware.sh file, you shoud modify some codes according to your personal settings
+# Docker installation \
+```
+sudo apt update
+sudo apt install -y docker.io
+```
+# Add current user to docker group (to use docker w/o sudo)
+```
+sudo usermod -aG docker $USER
+log out or reboot to apply effect (later)
+```
 
+# NVIDIA Container Toolkit
+```
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+```
+(check your ros distro if error occurs)
+```
+sudo apt update
+sudo apt install -y nvidia-container-toolkit
+```
+
+
+you shoud first install docker. it is recommended to register at docker.io\
+run_autoware.sh is shell script activating docker you pulled from docker pull rlaglo/autoware:ddr\
+Before you source run_autoware.sh file, you shoud modify some codes according to your personal settings\
 content of run_autoware.sh is as below
-
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\
+```
 #!/bin/bash
 
 xhost +local:root
@@ -25,17 +49,16 @@ docker run -it --rm \
   -v /home/qwer123/cyclonedds.xml:/home/autoware/cyclonedds.xml:ro \
   --name autoware \
   autoware:ddr \
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+```
 
 
 # Options
 -v options defines volume mount: check your volume mount path, and assign it with docker container's path \
 [a]:[b] means a directory [b] in container's space will share same space with host's space [a] \
-ex) /my_dir/my_ws:/home/autoware/shared_dir means you can see what you installed in container from host's /my_dir/my_ws folder
-
+ex) /my_dir/my_ws:/home/autoware/shared_dir means you can see what you installed in container from host's /my_dir/my_ws folder\
 deactivating options #17 ~ #21 is recommended \
 EX)
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\
+```
 #!/bin/bash
 
 xhost +local:root
@@ -49,13 +72,15 @@ docker run -it --rm \
   -v /my_host's somewhere:/home/autoware/shared_dir \
   --name autoware \
   autoware:ddr \
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+```
 
 # Run 
 at terminal, type
-
-. /<path_to_run_autoware.sh> \
-or \
+```
+. /<path_to_run_autoware.sh>
+```
+or
+```
 source /<path_to_run_autoware.sh> 
-
+```
 
