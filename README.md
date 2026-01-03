@@ -90,4 +90,17 @@ or
 ```
 source /<path_to_run_autoware.sh> 
 ```
-# 
+# Run autoware
+```
+source /autoware/install/setup.bash
+
+ros2 launch autoware_launch planning_simulator.launch.xml \
+map_path:=<path to map> \
+vehicle_model:=sample_vehicle \
+sensor_model:=sample_sensor_kit
+```
+you can find sample map on the internet
+
+
+
+
